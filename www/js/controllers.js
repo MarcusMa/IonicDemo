@@ -50,4 +50,22 @@ angular.module('starter.controllers', [])
   $scope.settings = {
     enableFriends: true
   };
-});
+})
+  .controller('LoginCtrl', function($scope,$state) {
+    $scope.loginName = '';
+    $scope.loginPassword = '';
+    $scope.init = function(){};
+    $scope.login = function(){
+      console.log($scope.loginName);
+      console.log($scope.loginPassword);
+      if($scope.loginName =='admin'&&$scope.loginPassword =='admin'){
+        $state.go("tab.dash");
+      }
+    }
+  })
+
+  .controller('SetupCtrl', function($scope) {
+    //TODO
+  })
+
+;
